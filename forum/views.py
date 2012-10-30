@@ -1,11 +1,13 @@
+from datetime import datetime
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPFound
+from testapp.models import Post
 
-posts = []
 
-
-@view_config(route_name='index', renderer='forumapp:templates/posts_index.mako')
+@view_config(route_name='index', renderer='testapp:templates/posts_index.mako')
 def index(request):
+    db = request.db
+    posts = db.query(Post).all()
     return {
         'posts': posts
     }
@@ -13,18 +15,12 @@ def index(request):
 
 @view_config(route_name='post_create', renderer='testapp:templates/posts_create.mako')
 def create(request):
-    import pdb;pdb.set_trace()
+    db = request.db
     if request.POST.get('submit', False):
-        _max = 0
-        for post in posts:
-            if post['id'] > _max:
-                _max = post['id']
-
-        posts.append({
-            'id': _max + 1,
-            'name': request.POST['name'],
-            'description': request.POST['description'],
-            'date': request.POST['date']
-        })
+        post = Post(name=request.POST['name'],
+                    description=request.POST['description'],
+                    date=datetime.now())
+        db.add(post)
+        db.commit()
         return HTTPFound('/')
     return {}
