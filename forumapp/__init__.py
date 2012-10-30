@@ -1,7 +1,7 @@
 from pyramid.config import Configurator
 from sqlalchemy import engine_from_config
 from sqlalchemy.orm import sessionmaker
-from testapp.models import initialize_base
+from forumapp.models import initialize_base
 
 
 def get_db(request):
@@ -24,5 +24,5 @@ def main(global_config, **settings):
     config.add_route('index', '/')
     config.add_route('post_create', '/posts/create')
 
-    config.scan('testapp')
+    config.scan('forumapp')
     return config.make_wsgi_app()

@@ -1,10 +1,10 @@
 from datetime import datetime
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPFound
-from testapp.models import Post
+from forumapp.models import Post
 
 
-@view_config(route_name='index', renderer='testapp:templates/posts_index.mako')
+@view_config(route_name='index', renderer='forumapp:templates/posts_index.mako')
 def index(request):
     db = request.db
     posts = db.query(Post).all()
@@ -13,7 +13,7 @@ def index(request):
     }
 
 
-@view_config(route_name='post_create', renderer='testapp:templates/posts_create.mako')
+@view_config(route_name='post_create', renderer='forumapp:templates/posts_create.mako')
 def create(request):
     db = request.db
     if request.POST.get('submit', False):
