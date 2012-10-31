@@ -13,8 +13,10 @@
         Password: <input type="text" name="password">
         <input type="submit" value="Submit"><br>
         <!-- link to sign up and sign up page to be created -->
-        <button type="button">Sign Up!</button>
         </form>
+        <FORM METHOD="LINK" ACTION="/signup" style="text-align:right;">
+        <INPUT TYPE="submit" VALUE="Sign Up!">
+        </FORM>
         <hr>
         <FORM METHOD="LINK" ACTION="/posts/create">
         <INPUT TYPE="submit" VALUE="Create a Post">
