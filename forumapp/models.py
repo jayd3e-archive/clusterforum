@@ -16,9 +16,22 @@ def initialize_base(engine):
 
 
 class Post(Base):
+    #table containing all posts
     __tablename__ = 'posts'
-
+    #fields
     id = Column(Integer, primary_key=True)
     name = Column(String)
     description = Column(String)
     date = Column(DateTime)
+    ## need to add creater id and link to user ##
+
+class User(Base):
+    #table containing all users
+    __tablename__ = 'users'
+    #fields
+    id = Column(Integer, primary_key=True)
+    username = Column(String)
+    password = Column(String) #encryption or something should be added. check later.
+    email = Column(String) # in-case we do email authentication
+    age = Column(String) 
+

@@ -1,3 +1,4 @@
+<!-- main: displays allows login etc -->
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
@@ -15,7 +16,9 @@
         <button type="button">Sign Up!</button>
         </form>
         <hr>
-        <button type="button">Create Post</button>
+        <FORM METHOD="LINK" ACTION="/posts/create">
+        <INPUT TYPE="submit" VALUE="Create a Post">
+        </FORM>
         <div class="posts">
             % for post in posts:
                 <div class="post">

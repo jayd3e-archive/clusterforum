@@ -23,6 +23,8 @@ def main(global_config, **settings):
     # Routes
     config.add_route('index', '/')
     config.add_route('post_create', '/posts/create')
+    config.add_route('sign_up', '/signup')
+    config.add_route('signup_sucess', '/sucess')
 
     config.scan('forumapp')
     return config.make_wsgi_app()

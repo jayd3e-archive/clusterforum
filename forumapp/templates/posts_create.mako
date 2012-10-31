@@ -1,10 +1,15 @@
+<!-- Create a post/thread -->
 <html>
     <head>
         <title>Create a Post</title>
     </head>
     <body>
+        <hr>
+        <FORM METHOD="LINK" ACTION="/">
+        <INPUT TYPE="submit" VALUE="Home">
+        </FORM>
+        
         <form method="POST" action="/posts/create">
-            <hr>
             <h1> Create Post </h1>
             <label for="name">Title
                 <input name="name" type="text"/>
@@ -14,7 +19,7 @@
                 <input name="date" type="text"/> -->
             </label>
             <input name="submit" type="submit"/>
-        </hr>
+        <hr>
         </form>
     </body>
 </html>
