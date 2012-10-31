@@ -4,16 +4,17 @@
     </head>
     <body>
         <form method="POST" action="/posts/create">
-            <label for="name">Name
+            <hr>
+            <h1> Create Post </h1>
+            <label for="name">Title
                 <input name="name" type="text"/>
-            </label>
-            <label for="description">Description
-                <input name="description" type="text"/>
-            </label>
-<!--             <label for="date">Date
+            </label><br>
+            <textarea name="description" cols="50" rows="5">Enter your details here...</textarea><br>
+<!--             data is generated. <label for="date">Date
                 <input name="date" type="text"/> -->
             </label>
             <input name="submit" type="submit"/>
+        </hr>
         </form>
     </body>
 </html>

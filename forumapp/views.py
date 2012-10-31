@@ -24,3 +24,6 @@ def create(request):
         db.commit()
         return HTTPFound('/')
     return {}
+
+
+

@@ -1,8 +1,21 @@
 <html>
     <head>
-        <title>List of Posts</title>
+        <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
+        <title>Home</title>
     </head>
-    <body>
+    <body id = "bgcolor">
+        <hr>
+        <h1>clusterForum</h1>
+        <!-- User database to be created! -->
+        <form style="text-align:right;" name="input" action="html_form_action.asp" method="get">
+        Username: <input type="text" name="username">
+        Password: <input type="text" name="password">
+        <input type="submit" value="Submit"><br>
+        <!-- link to sign up and sign up page to be created -->
+        <button type="button">Sign Up!</button>
+        </form>
+        <hr>
+        <button type="button">Create Post</button>
         <div class="posts">
             % for post in posts:
                 <div class="post">
