@@ -1,7 +1,7 @@
 <!-- Create a post/thread -->
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
         <title>Create a Post</title>
     </head>
     <body id="pagewrap">

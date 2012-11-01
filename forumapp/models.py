@@ -5,7 +5,6 @@ from sqlalchemy import (
     DateTime
 )
 from sqlalchemy.ext.declarative import declarative_base
-users2.create()
 
 Base = declarative_base()
 
