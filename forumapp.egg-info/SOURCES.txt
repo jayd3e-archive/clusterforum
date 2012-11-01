@@ -1,6 +1,7 @@
 README
 forumapp/__init__.py
 forumapp/models.py
+forumapp/status.py
 forumapp/views.py
 forumapp.egg-info/PKG-INFO
 forumapp.egg-info/SOURCES.txt

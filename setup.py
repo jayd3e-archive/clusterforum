@@ -6,7 +6,9 @@ entry_points = """
 """
 
 requires = [
-    'pyramid'
+    'pyramid',
+    'waitress',
+    'sqlalchemy'
 ]
 
 setup(name='forumapp',
