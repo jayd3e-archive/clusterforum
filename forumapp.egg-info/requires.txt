@@ -1,3 +1,0 @@
-pyramid
-waitress
-sqlalchemy
