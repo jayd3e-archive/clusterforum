@@ -1,15 +1,19 @@
 from datetime import datetime
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPFound
-from forumapp.models import Post
-
+from forumapp.models import (
+    Post,
+    User
+)
 
 @view_config(route_name='index', renderer='forumapp:templates/posts_index.mako')
 def index(request):
     db = request.db
     posts = db.query(Post).all()
+    users = db.query(User).all()
     return {
-        'posts': posts
+        'posts': posts,
+        'users': users
     }
 
 

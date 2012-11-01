@@ -1,6 +1,7 @@
 <!-- Sign Up HTML: should take in user info and store to user table -->
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
             <title>New Users!</title>
     </head>
     <body>

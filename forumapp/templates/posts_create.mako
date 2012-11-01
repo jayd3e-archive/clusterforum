@@ -1,14 +1,15 @@
 <!-- Create a post/thread -->
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
         <title>Create a Post</title>
     </head>
-    <body>
+    <body id="pagewrap">
         <hr>
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>
-        
+        <hr>
         <form method="POST" action="/posts/create">
             <h1> Create Post </h1>
             <label for="name">Title
@@ -19,7 +20,6 @@
                 <input name="date" type="text"/> -->
             </label>
             <input name="submit" type="submit"/>
-        <hr>
         </form>
     </body>
 </html>
