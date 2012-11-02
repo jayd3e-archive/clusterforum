@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
         <title>Home</title>
     </head>
-    <body id = "bgcolor">
+    <body style="margin-right:50px; margin-left:50px; background-color:#bb0000;">
         <hr>
         <h1>clusterForum</h1>
         <!-- User database to be created! -->
@@ -24,10 +24,9 @@
         <div class="posts">
             % for post in posts:
                 <div class="post">
-                    <h2>${ post.name }</h2>
-                    <span>${ post.id }</span>
+                    <span><h2 "vertical-align:middle;">${ post.name }</h2>Created: ${ post.date }<span>
                     <div>${ post.description }</div>
-                    <div>${ post.date }</div>
+                    <div>${ post.id }</div>
                 </div>
             % endfor
         </div>

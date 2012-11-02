@@ -4,13 +4,13 @@
         <link rel="stylesheet" type="text/css" href="mystyle.css">
         <title>Create a Post</title>
     </head>
-    <body id="pagewrap">
+    <body style="margin-right:50px; margin-left:50px; background-color:#bb0000;">
         <hr>
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>
         <hr>
-        <form method="POST" action="/posts/create">
+        <form method="POST" action="/posts/create" style = "text-align:center;">
             <h1> Create Post </h1>
             <label for="name">Title
                 <input name="name" type="text"/>
