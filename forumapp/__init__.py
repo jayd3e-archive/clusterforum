@@ -25,6 +25,8 @@ def main(global_config, **settings):
     config.add_route('post_create', '/posts/create')
     config.add_route('sign_up', '/signup')
     config.add_route('signup_sucess', '/sucess')
+    #will eventuall link you to a select post
+    # config.add_route('view_post', '/post/{post.id}')
 
     config.scan('forumapp')
     return config.make_wsgi_app()
