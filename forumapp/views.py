@@ -3,17 +3,17 @@ from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPFound
 from forumapp.models import (
     Post,
+    #AuthUser,
     User
 )
+
 
 @view_config(route_name='index', renderer='forumapp:templates/posts_index.mako')
 def index(request):
     db = request.db
     posts = db.query(Post).all()
-    users = db.query(User).all()
     return {
-        'posts': posts,
-        'users': users
+        'posts': posts
     }
 
 
@@ -47,6 +47,12 @@ def signup(request):
 def sucess(request):
     return{}
 
-
+@view_config(route_name='view_post', renderer='forumapp:templates/post_display.mako')
+def view(request):
+    db = request.db
+    posts = db.query(Post).post.id
+    return{
+        'posts': posts
+    }
 
 

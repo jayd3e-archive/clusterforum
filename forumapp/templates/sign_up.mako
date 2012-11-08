@@ -8,12 +8,20 @@
         <hr> 
         <h1> Sign Up! </h1>
         <hr>
-        <form style="vertical-align:middle;" method="POST" action="/sucess">
-        <br>Username: <input type="text" name="username">
-        <br>Password: <input type="text" name="password">
-        <br>Email: <input type="text" name="email">
-        <br>Age: <input type="text" name="age">
-        <br><input type="submit" value="Submit"><br>
+        <form style="text-align:center;" method="POST" action="/sucess">
+        <table border="1;" style="text-align:center;">
+            <tr>
+            <td>Username: <input type="text" name="username"></td>
+            <tr>
+            <td>Password: <input type="password" name="password"></td>
+            <tr>
+            <td>Email: <input type="text" name="email"></td>
+            <tr>
+            <td>Age: <input type="text" name="age"></td>
+            <tr>
+            <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
         <!-- link to sign up and sign up page to be created -->
         </form>
     </body>

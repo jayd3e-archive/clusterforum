@@ -10,7 +10,7 @@
         <!-- User database to be created! -->
         <form style="text-align:right;" name="input" action="/" method="get">
         Username: <input type="text" name="username">
-        Password: <input type="text" name="password">
+        Password: <input type="password" name="password">
         <input type="submit" value="Submit"><br>
         <!-- link to sign up and sign up page to be created -->
         </form>
@@ -21,10 +21,10 @@
         <FORM METHOD="LINK" ACTION="/posts/create">
         <INPUT TYPE="submit" VALUE="Create a Post">
         </FORM>
-        <div class="posts">
+        <div class="posts" style="vertical-align:middle;">
             % for post in posts:
                 <div class="post">
-                    <span><h2 "vertical-align:middle;">${ post.name }</h2>Created: ${ post.date }<span>
+                    <span><h2 ><a href="post/${post.id}">${ post.name }</a></h2>Created: ${ post.date }<span>
                     <div>${ post.description }</div>
                     <div>${ post.id }</div>
                 </div>

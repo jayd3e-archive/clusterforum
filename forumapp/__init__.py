@@ -20,13 +20,16 @@ def main(global_config, **settings):
     config = Configurator(settings=settings)
     config.set_request_property(get_db, 'db', reify=True)
 
+    #Static routes
+    #config.add_static_view('style', 'forumapp:dependencies/style/mystyle.css')
+
     # Routes
     config.add_route('index', '/')
     config.add_route('post_create', '/posts/create')
     config.add_route('sign_up', '/signup')
     config.add_route('signup_sucess', '/sucess')
-    #will eventuall link you to a select post
-    # config.add_route('view_post', '/post/{post.id}')
+    # should be changed to {'post.id'}
+    config.add_route('view_post', '/post/{id}')
 
     config.scan('forumapp')
     return config.make_wsgi_app()

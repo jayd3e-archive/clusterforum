@@ -1,7 +1,7 @@
 <!-- Create a post/thread -->
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="/dependencies/style/mystyle.css">
         <title>Create a Post</title>
     </head>
     <body style="margin-right:50px; margin-left:50px; background-color:#bb0000;">
