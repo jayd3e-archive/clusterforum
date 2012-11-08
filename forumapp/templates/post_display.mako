@@ -3,6 +3,6 @@
         <title>Post</title>
     </head>
     <body>
-        <p> Link test, this will eventually display the post data and comments. </p>
+        <p> Finish displaying data here for each post! </p>
     </body>
 </html>

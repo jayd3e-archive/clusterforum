@@ -50,9 +50,13 @@ def sucess(request):
 @view_config(route_name='view_post', renderer='forumapp:templates/post_display.mako')
 def view(request):
     db = request.db
-    posts = db.query(Post).post.id
-    return{
-        'posts': posts
+    if 'id' in request.matchdict:
+        id = request.matchdict['id']
+        post = db.query(Post).filter_by(id=id).first()
+    return {
+        'posts': post
     }
+
+
 
 
