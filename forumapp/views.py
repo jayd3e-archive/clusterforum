@@ -54,7 +54,7 @@ def view(request):
         id = request.matchdict['id']
         post = db.query(Post).filter_by(id=id).first()
     return {
-        'posts': post
+        'post': post
     }
 
 

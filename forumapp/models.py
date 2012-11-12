@@ -2,7 +2,8 @@ from sqlalchemy import (
     Column,
     Integer,
     String,
-    DateTime
+    DateTime,
+    ForeignKey
 )
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -22,6 +23,7 @@ class Post(Base):
     name = Column(String, nullable = False)
     description = Column(String, nullable = False)
     date = Column(DateTime)
+    #user_id = Column(Integer, ForeignKey('users.id'))
     ## need to add creater id and link to user ##
 
 class User(Base):
@@ -32,7 +34,15 @@ class User(Base):
     username = Column(String, nullable = False)
     password = Column(String, nullable = False) #encryption or something should be added. check later.
     email = Column(String) # in-case we do email authentication
-    age = Column(String) 
+    age = Column(String)
+
+class Comment(Base):
+    __tablename__ = 'comments'
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable = False)
+    description = Column(String, nullable = False)
+    date = Column(DateTime)
+    user_id = Column(Integer, ForeignKey('users.id'))
 
 
 
