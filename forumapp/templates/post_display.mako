@@ -19,7 +19,7 @@
         <!-- need to add comments to the post still -->
 
         <!-- Option to post a comment -->
-        <form method="GET" action="../post/${post.id}" style = "text-align:center;">
+        <form method="POST" action="../post/${post.id}" style = "text-align:center;">
             <h4> Post a Comment </h4>
             <textarea name="description" cols="100" rows="10">Enter your details here...</textarea><br>
             </label>

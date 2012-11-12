@@ -3,7 +3,8 @@ from sqlalchemy import (
     Integer,
     String,
     DateTime,
-    ForeignKey
+    ForeignKey,
+    desc
 )
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -39,11 +40,7 @@ class User(Base):
 class Comment(Base):
     __tablename__ = 'comments'
     id = Column(Integer, primary_key=True)
-    name = Column(String, nullable = False)
     description = Column(String, nullable = False)
     date = Column(DateTime)
     post_id = Column(Integer, ForeignKey('posts.id'))
-    user_id = Column(Integer, ForeignKey('users.id'))
-
-
-
+    #user_id = Column(Integer, ForeignKey('users.id'))

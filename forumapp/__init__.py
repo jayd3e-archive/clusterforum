@@ -28,7 +28,6 @@ def main(global_config, **settings):
     config.add_route('post_create', '/posts/create')
     config.add_route('sign_up', '/signup')
     config.add_route('signup_sucess', '/sucess')
-    # should be changed to {'post.id'}
     config.add_route('view_post', '/post/{id}')
     config.add_route('post_comment', '/post/{id}')
 

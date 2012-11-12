@@ -13,11 +13,10 @@ from forumapp.models import (
 def index(request):
     db = request.db
     posts = db.query(Post).all()
+    db.flush()
     return {
         'posts': posts
     }
-
-
 @view_config(route_name='post_create', renderer='forumapp:templates/posts_create.mako')
 def create(request):
     db = request.db
@@ -27,6 +26,7 @@ def create(request):
                     date=datetime.now())
         db.add(post)
         db.commit()
+        db.flush()
         return HTTPFound('/')
     return {}
 
@@ -36,11 +36,12 @@ def signup(request):
     db = request.db
     if request.POST.get('submit', False):
         user = User(username=request.POST['username'],
-                    password=request.POST['password'],
-                    email=request.POST['email'],
-                    age=request.POST['age'])
+            password=request.POST['password'],
+            email=request.POST['email'],
+            age=request.POST['age'])
         db.add(user)
         db.commit()
+        db.flush()
         return HTTPFound('/sucess')
     return {}
 
@@ -50,27 +51,34 @@ def sucess(request):
     # Also set params, so the field can't be left blank/length restrictions.
     return{}
 
+@view_config(route_name='post_comment', renderer='forumapp:templates/post_display.mako')
+def comment(request):
+    if request.POST.get('submit', False):
+        if 'id' in request.matchdict:
+            id = request.matchdict['id']
+            comment = Comment(description=request.POST['description'],
+                date=datetime.now(),
+                post_id=id)
+            db.add(comment)
+    return{}
+            
+
 @view_config(route_name='view_post', renderer='forumapp:templates/post_display.mako')
 def view(request):
     db = request.db
     if 'id' in request.matchdict:
         id = request.matchdict['id']
         post = db.query(Post).filter_by(id=id).first()
-    if request.POST.get('submit', False):
-        comment = Comment(description=request.POST['description'],
-                        date=datetime.now())
-        db.add(comment)
-        db.commit()
+        if request.POST.get('submit', False):
+            comment = db.query(Comment).filter_by(id=id)
+            return{'comment': comment}
+    db.commit()
+    db.flush()
     return {
         'post': post
     }
-@view_config(route_name='post_comment', renderer='forumapp:templates/post_display.mako')
-def comment(request):
-    db = request.db
-    comments = db.query(Comment).all()
-    return{
-        'comments': comments
-    }
+
+
 
 
 
