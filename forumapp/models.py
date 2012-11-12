@@ -23,7 +23,7 @@ class Post(Base):
     name = Column(String, nullable = False)
     description = Column(String, nullable = False)
     date = Column(DateTime)
-    #user_id = Column(Integer, ForeignKey('users.id'))
+    user_id = Column(Integer, ForeignKey('users.id'))
     ## need to add creater id and link to user ##
 
 class User(Base):
@@ -42,6 +42,7 @@ class Comment(Base):
     name = Column(String, nullable = False)
     description = Column(String, nullable = False)
     date = Column(DateTime)
+    post_id = Column(Integer, ForeignKey('posts.id'))
     user_id = Column(Integer, ForeignKey('users.id'))
 
 

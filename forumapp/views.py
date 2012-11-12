@@ -4,7 +4,8 @@ from pyramid.httpexceptions import HTTPFound
 from forumapp.models import (
     Post,
     #AuthUser,
-    User
+    User,
+    Comment
 )
 
 
@@ -34,10 +35,10 @@ def signup(request):
     #to be implemented
     db = request.db
     if request.POST.get('submit', False):
-        user = User(username=request.USER['username'],
-                    password=request.USER['password'],
-                    email=request.USER['email'],
-                    age=request.USER['age'])
+        user = User(username=request.POST['username'],
+                    password=request.POST['password'],
+                    email=request.POST['email'],
+                    age=request.POST['age'])
         db.add(user)
         db.commit()
         return HTTPFound('/sucess')
@@ -45,6 +46,8 @@ def signup(request):
 
 @view_config(route_name='signup_sucess', renderer='forumapp:templates/signup_sucess.mako')
 def sucess(request):
+    #Eventually return some sort of global logged-in variable
+    # Also set params, so the field can't be left blank/length restrictions.
     return{}
 
 @view_config(route_name='view_post', renderer='forumapp:templates/post_display.mako')
@@ -53,8 +56,20 @@ def view(request):
     if 'id' in request.matchdict:
         id = request.matchdict['id']
         post = db.query(Post).filter_by(id=id).first()
+    if request.POST.get('submit', False):
+        comment = Comment(description=request.POST['description'],
+                        date=datetime.now())
+        db.add(comment)
+        db.commit()
     return {
         'post': post
+    }
+@view_config(route_name='post_comment', renderer='forumapp:templates/post_display.mako')
+def comment(request):
+    db = request.db
+    comments = db.query(Comment).all()
+    return{
+        'comments': comments
     }
 
 

@@ -30,6 +30,7 @@ def main(global_config, **settings):
     config.add_route('signup_sucess', '/sucess')
     # should be changed to {'post.id'}
     config.add_route('view_post', '/post/{id}')
+    config.add_route('post_comment', '/post/{id}')
 
     config.scan('forumapp')
     return config.make_wsgi_app()

@@ -4,11 +4,11 @@
         <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
         <title>Home</title>
     </head>
-    <body style="margin-right:50px; margin-left:50px; background-color:#bb0000;">
+    <body style="margin-right:50px; margin-left:50px;">
         <hr>
         <h1>clusterForum</h1>
         <!-- User database to be created! -->
-        <form style="text-align:right;" name="input" action="/" method="get">
+        <form style="text-align:right;" name="input" action="/" method="POST">
         Username: <input type="text" name="username">
         Password: <input type="password" name="password">
         <input type="submit" value="Submit"><br>
@@ -24,9 +24,9 @@
         <div class="posts" style="vertical-align:middle;">
             % for post in posts:
                 <div class="post">
-                    <span><h2 ><a href="post/${post.id}">${ post.name }</a></h2>Created: ${ post.date }<span>
-                    <div>${ post.description }</div>
-                    <div>${ post.id }</div>
+                    <h3><a href="post/${post.id}">${ post.name }</a></h3>
+                    <div><h4><b>${ post.description }</b></h4></div>
+                    <div><span>Created: ${ post.date } ID: ${ post.id }</span></div>
                 </div>
             % endfor
         </div>
