@@ -11,18 +11,18 @@
         <p> <b> clusterForum </b> is an online forum for general purposes. <br>
             Sign Up is free and your information is kept conifdential. <br>
             Remember to checkout the real deal @clusterflunk.com!
-        <form style="text-align:center;" method="POST" action="/sucess">
+        <form method="POST" action="/signup" style="text-align:center;">
         <table border="1;" style="text-align:center;">
             <tr>
-            <td>*Username: <input type="text" name="username"></td>
+            <td><label for="username">*Username: <input name="username" type="text"/></label></td>
             <tr>
-            <td>*Password: <input type="password" name="password"></td>
+            <td><label for="password">*Password: <input name="password" type="password"/></label></td>
             <tr>
-            <td>*Email: <input type="text" name="email"></td>
+            <td><label for="email">*Email: <input name="email" type="text"/></label></td>
             <tr>
-            <td>*Age: <input type="text" name="age"></td>
+            <td><label for="age">*Age: <input name="age" type="text"/></label></td>
             <tr>
-            <td><input type="submit" value="Submit"></td>
+            <td><input type="submit" value="Submit"/></td>
             </tr>
         </table>
         <p style="text-align:left;"> * indicates required fields </p>

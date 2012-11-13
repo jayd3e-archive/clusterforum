@@ -32,7 +32,6 @@ def create(request):
 
 @view_config(route_name='sign_up', renderer='forumapp:templates/sign_up.mako')
 def signup(request):
-    #to be implemented
     db = request.db
     if request.POST.get('submit', False):
         user = User(username=request.POST['username'],
@@ -62,7 +61,6 @@ def comment(request):
             db.add(comment)
     return{}
             
-
 @view_config(route_name='view_post', renderer='forumapp:templates/post_display.mako')
 def view(request):
     db = request.db

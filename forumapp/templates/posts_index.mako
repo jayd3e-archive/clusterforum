@@ -8,7 +8,7 @@
         <hr>
         <h1>clusterForum</h1>
         <!-- User database to be created! -->
-        <form style="text-align:right;" name="input" action="/" method="POST">
+        <form style="text-align:right;" action="/" method="POST">
         Username: <input type="text" name="username">
         Password: <input type="password" name="password">
         <input type="submit" value="Submit"><br>
