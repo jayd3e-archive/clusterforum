@@ -6,11 +6,12 @@
     </head>
     <body style="margin-right:50px; margin-left:50px;">
         <hr>
-        <h1> clustForum </h1>
+        <h1 style="color:red"> clustForum </h1>
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>
         <hr>
+        <!-- form to create a post -->
         <form method="POST" action="/posts/create" style = "text-align:center;">
             <h1> Create Post </h1>
             <label for="name">Title

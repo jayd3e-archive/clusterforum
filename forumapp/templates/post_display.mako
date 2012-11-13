@@ -4,7 +4,7 @@
     </head>
     <body style="margin-right:50px; margin-left:50px; background-color:#FFFFFF;">
         <hr>
-        <h1> clusterForum </h1>
+        <h1 style="color:red"> clusterForum </h1>
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>
@@ -19,7 +19,8 @@
         <!-- need to add comments to the post still -->
 
         <!-- Option to post a comment -->
-        <form method="POST" action="../post/${post.id}" style = "text-align:center;">
+            <!-- still in work -->
+        <form method="POST" action = "/post/comment" style = "text-align:center;">
             <h4> Post a Comment </h4>
             <textarea name="description" cols="100" rows="10">Enter your details here...</textarea><br>
             </label>
