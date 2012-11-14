@@ -30,7 +30,6 @@ def main(global_config, **settings):
     config.add_route('signup_sucess', '/sucess')
     config.add_route('sign_in', '/signin')
     config.add_route('view_post', '/post/{id}')
-    config.add_route('post_comment', '/post/comment')
     # change ^ back to /post/{id}, just changed for testing!
 
     config.scan('forumapp')

@@ -10,25 +10,31 @@ from pyramid.httpexceptions import (
 from pyramid.security import NO_PERMISSION_REQUIRED
 from forumapp.models import (
     Post,
-    #AuthUser,
     User,
     Comment
 )
-#make log in required for certain pages/features. If not logged push to login page!
+# TODO: Implement sesions for log in purposes.
+# from pyramid.session import UnencryptedCookieSessionFactoryConfig
+# my_session_factory = UnencryptedCookieSessionFactoryConfig('itsaseekreet')
+# from pyramid.config import Configurator
+# config = Configurator(session_factory = my_session_factory)
+# from pyramid.response import Response
+
+
+# make log in required for certain pages/features. If not logged push to login page!
 # may need soap, or some other functionality.
 @view_config(route_name='sign_in', renderer='forumapp:templates/sign_in.mako', permission=NO_PERMISSION_REQUIRED)
 @forbidden_view_config(renderer='forumapp:templates/sign_in.mako')
 def signin(request):
+    #session = request.session
     db = request.db
     if request.POST.get('submit', False):
-        try:
-            user = db.query(Users).filter_by(username=request.POST.username).first()
-            password = db.query(Users).filter_by(password=request.POST.password).first()
-            print user
-            print password
-            return HTTPFound('/')
-        finally:
-            return HTTPFound('/signup') 
+            # session['user'] = db.query(Users).filter_by(username=request.POST.username).first()
+            # session['password'] = db.query(Users).filter_by(password=request.POST.password).first()
+            # if user in session:
+            #     return Response('Logged In')
+            # return HTTPFound('/')
+        return HTTPFound('/') 
     return{}  
 
 
@@ -85,35 +91,24 @@ def sucess(request):
     # Also set params, so the field can't be left blank/length restrictions.
     return{}
 
-#Stores comment data to comment database.
-#It is linked to the posts ID
-#Need to work on displaying the comment.
-@view_config(route_name='post_comment', renderer='forumapp:templates/post_display.mako')
-def comment(request):
-    if request.POST.get('submit', False):
-        print "got here" #debug purposes
-        if 'id' in request.matchdict:
-            print "got here" # debug purposes
-            id = request.matchdict['id']
-            comment = Comment(description=request.POST['description'],
-                date=datetime.now(),
-                post_id=id)
-            db.add(comment)
-            db.commit()
-            db.flush()
-    return{}
-
 #Displays a single post based on POST_ID            
 @view_config(route_name='view_post', renderer='forumapp:templates/post_display.mako', permission=NO_PERMISSION_REQUIRED)
 def view(request):
     db = request.db
     if 'id' in request.matchdict:
         id = request.matchdict['id']
+        if request.POST.get('submit', False):
+            comment = Comment(description=request.POST['description'],
+                date=datetime.now(),
+                post_id=id)
+            db.add(comment)
+        comments = db.query(Comment).filter_by(post_id=id).all()
         post = db.query(Post).filter_by(id=id).first()
     db.commit()
     db.flush()
     return {
-        'post': post
+        'post': post,
+        'comments': comments
     }
 
 

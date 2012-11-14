@@ -1,1 +1,4 @@
 This is an app to represent a forum.
+
+import pdb; pdb.set_trace()
+Used to debug.

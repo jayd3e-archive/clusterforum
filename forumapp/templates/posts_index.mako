@@ -27,7 +27,6 @@
             % for post in posts:
                 <div class="post">
                     <h3><a href="post/${post.id}">${ post.name }</a></h3>
-                    <!--<div><h4><b>${ post.description }</b></h4></div>-->
                     <div><span>Created: ${ post.date } ID: ${ post.id }</span></div>
                 </div>
             % endfor
