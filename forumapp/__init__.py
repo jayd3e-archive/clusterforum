@@ -21,16 +21,19 @@ def main(global_config, **settings):
     config.set_request_property(get_db, 'db', reify=True)
 
     #Static routes
-    config.add_static_view('style', 'forumapp:dependencies/style')
+    config.add_static_view('style', 'forumapp:dependencies/')
 
     # Routes
+    # HOME
     config.add_route('index', '/')
+    # POSTS
     config.add_route('post_create', '/posts/create')
+    config.add_route('view_post', '/post/{id}')
+    # Sign up / Sign In
     config.add_route('sign_up', '/signup')
     config.add_route('signup_sucess', '/sucess')
     config.add_route('sign_in', '/signin')
-    config.add_route('view_post', '/post/{id}')
-    # change ^ back to /post/{id}, just changed for testing!
+    
 
     config.scan('forumapp')
     return config.make_wsgi_app()

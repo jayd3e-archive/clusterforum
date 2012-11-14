@@ -1,7 +1,7 @@
 <!-- main: displays allows login etc -->
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="forumapp:forumapp/dependencies/style"/>
+        <link rel="stylesheet" type="text/css" href="style/mystyle.css"/>
         <title>Home</title>
     </head>
     <body style="margin-right:100px; margin-left:100px;">

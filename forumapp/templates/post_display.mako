@@ -8,6 +8,7 @@
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>
+        <h5 style="text-align:left"><a href="#comment">Comment On A Thread</a></h5>
         <hr>
             <!--Displays the single post/thread -->
         <div class="post" style="vertical-align:middle;">
@@ -32,7 +33,7 @@
         <!-- Option to post a comment -->
             <!-- still in work -->
         <form method="POST" style = "text-align:center;">
-            <h4> Post a Comment </h4>
+            <a id="comment"/><h4> Post a Comment </h4></a>
             <textarea name="description" cols="100" rows="10">Enter your details here...</textarea><br>
             </label>
             <input name="submit" type="submit"/>
