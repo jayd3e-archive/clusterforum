@@ -3,7 +3,7 @@
     <head>
         <title> ACCOUNT CREATED! </title>
     </head>
-    <body style="margin-right:50px; margin-left:50px;">
+    <body style="margin-right:100px; margin-left:100px;">
         <h2> ACCOUNT CREATED! </h2>
     </p> Your account has been created sucessfully! Please continue to enjoy our forums! </p>
     <FORM METHOD="LINK" ACTION="/">

@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
             <title>New Users!</title>
     </head>
-    <body style="margin-right:50px; margin-left:50px;">
+    <body style="margin-right:100px; margin-left:100px;">
         <hr> 
         <h1> Sign Up! </h1>
         <hr>

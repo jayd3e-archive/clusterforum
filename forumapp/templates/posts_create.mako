@@ -1,10 +1,10 @@
 <!-- Create a post/thread -->
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/dependencies/style/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="style/mysytle.css">
         <title>Create a Post</title>
     </head>
-    <body style="margin-right:50px; margin-left:50px;">
+    <body style="margin-right:100px; margin-left:100px;">
         <hr>
         <h1 style="color:red"> clustForum </h1>
         <FORM METHOD="LINK" ACTION="/">
@@ -18,8 +18,6 @@
                 <input name="name" type="text"/>
             </label><br>
             <textarea name="description" cols="100" rows="10">Enter your details here...</textarea><br>
-<!--             data is generated. <label for="date">Date
-                <input name="date" type="text"/> -->
             </label>
             <input name="submit" type="submit"/>
         </form>

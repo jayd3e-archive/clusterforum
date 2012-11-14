@@ -21,7 +21,7 @@ def main(global_config, **settings):
     config.set_request_property(get_db, 'db', reify=True)
 
     #Static routes
-    #config.add_static_view('style', 'forumapp:dependencies/style/mystyle.css')
+    config.add_static_view('style', 'forumapp:dependencies/style')
 
     # Routes
     config.add_route('index', '/')

@@ -1,12 +1,12 @@
 <!-- main: displays allows login etc -->
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="forumapp:forumapp/dependencies/style"/>
         <title>Home</title>
     </head>
-    <body style="margin-right:50px; margin-left:50px;">
+    <body style="margin-right:100px; margin-left:100px;">
         <hr>
-        <h1 style="color:red;">clusterForum</h1>
+        <a id="top"/><h1 style="color:red;">clusterForum</h1></a>
         <!-- sign in-->
         <span>
             <FORM METHOD="LINK" ACTION="/signin">
@@ -31,5 +31,6 @@
                 </div>
             % endfor
         </div>
+        <h6 style="text-align:right"><a href="#top">Return To Top</a></h6>
     </body>
 </html>

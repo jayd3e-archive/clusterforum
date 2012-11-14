@@ -2,9 +2,9 @@
     <head>
         <title>Post</title>
     </head>
-    <body style="margin-right:50px; margin-left:50px; background-color:#FFFFFF;">
+    <body style="margin-right:100px; margin-left:100px; background-color:#FFFFFF;">
         <hr>
-        <h1 style="color:red"> clusterForum </h1>
+        <a id="top"/><h1 style="color:red"> clusterForum </h1></a>
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>
@@ -37,5 +37,7 @@
             </label>
             <input name="submit" type="submit"/>
         </form>
+        <br>
+        <h6 style="text-align:right"><a href="#top">Return To Top</a></h6>
     </body>
 </html>

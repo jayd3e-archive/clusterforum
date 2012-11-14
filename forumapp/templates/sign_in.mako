@@ -2,7 +2,7 @@
     <head>
         <title>SIGN IN</title>
     </head>
-    <body style="margin-right:50px; margin-left:50px;">
+    <body style="margin-right:100px; margin-left:100px;">
         <hr>
         <h1 style="color:red"> clusterForum </h1>
         <FORM METHOD="LINK" ACTION="/">
