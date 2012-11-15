@@ -3,6 +3,7 @@
     width:750px;
     margin:0 auto;
     margin-top:30px;
+    margin-bottom:30px;
     COLOR:#2D92C4;
 }
 body {
@@ -47,6 +48,9 @@ body {
 }
 #title{
     COLOR: #FF0000;
+    position:relative;
+    left:10px;
+    top:10px;
 }
 #ul_index{
     display:inline-block;
@@ -62,6 +66,14 @@ body {
     border-style:solid;
     border-width:medium;
     border-color:grey;
+    position:relative;
+    left:7px;
+    top:10px;
+}
+#texttab{
+    position:relative;
+    left:10px;
+    top:10px;
 }
 a:link {
     COLOR: #FF0000;
@@ -74,4 +86,21 @@ a:hover {
 }
 a:active {
     COLOR: #FF0000;
+}
+p{
+    position:relative;
+    left:15px;
+    top:10px;
+}
+#signin_form{
+    position:relative;
+    top:25px;
+    left:25px;
+    border-color:grey;
+}
+
+#signup_form{
+    position:relative;
+    left:25px;
+    border-color:grey;
 }

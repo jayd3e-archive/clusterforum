@@ -4,30 +4,38 @@
         <link rel="stylesheet" type="text/css" href="/style/mystyle.css"/>
             <title>New Users!</title>
     </head>
-    <body>
-        <hr>
-        <h1> clusterForum: Sign Up! </h1>
-        <hr>
-        <p> <b> clusterForum </b> is an online forum for general purposes. <br>
-            Sign Up is free and your information is kept conifdential. <br>
-            Remember to checkout the real deal @clusterflunk.com! </p>
-        <!-- Sign up fields -->
-            <!-- TO DO: set params on each -->
-        <form method="POST" action="/signup" style="text-align:center;">
-            <table border="1;" style="text-align:center;">
-                <tr>
-                <td><label for="username">*Username: <input name="username" type="text"/></label></td>
-                <tr>
-                <td><label for="password">*Password: <input name="password" type="password"/></label></td>
-                <tr>
-                <td><label for="email">*Email: <input name="email" type="text"/></label></td>
-                <tr>
-                <td><label for="age">*Age: <input name="age" type="text"/></label></td>
-                <tr>
-                <td><input name="submit" type="submit"/></td>
-                </tr>
-            </table>
-            <p style="text-align:left;"> * indicates required fields </p>
-        </form>
+    <body id="body">
+        <div id="header">
+        <h1 id="title"> clusterForum: Sign Up! </h1>
+        </div>
+        <div id="navigation">
+            <li id="li_index"><FORM METHOD="LINK" ACTION="/"><INPUT TYPE="submit" VALUE="Home"></li>
+        </div>
+        <div id="content">
+            <p> <b> clusterForum </b> is an online forum for general purposes. <br>
+                Sign Up is free and your information is kept conifdential. <br>
+                Remember to checkout the real deal @clusterflunk.com! </p>
+            <!-- Sign up fields -->
+                <!-- TO DO: set params on each -->
+            <form method="POST" action="/signup" style="text-align:center">
+                <table border="1;" id="signup_form">
+                    <tr>
+                    <td><label for="username">*Username: <input name="username" type="text"/></label></td>
+                    <tr>
+                    <td><label for="password">*Password: <input name="password" type="password"/></label></td>
+                    <tr>
+                    <td><label for="email">*Email: <input name="email" type="text"/></label></td>
+                    <tr>
+                    <td><label for="age">*Age: <input name="age" type="text"/></label></td>
+                    <tr>
+                    <td><input name="submit" type="submit"/></td>
+                    </tr>
+                </table>
+                <p style="text-align:left;"> * indicates required fields </p>
+            </form>
+        </div>
+        <div id="footer">
+            <p> This is a forum created for practice purposes. Credit: ClusterFlunk development team. Nov.1 -Nov.28 2012 </p>
+        </div>
     </body>
 </html>

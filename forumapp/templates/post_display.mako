@@ -20,7 +20,7 @@
             <div class="post" style="vertical-align:middle;">
                 <h1 id="title">Title: ${ post.name }</h1>
                 <div><h4><b>Details: ${ post.description }</h4></b></div>
-                <div><span>Created: ${ post.date } ID: ${ post.id }</div>
+                <div style="color:black"><span>Created: ${ post.date } ID: ${ post.id }</div>
             </div>
             <!-- need to add comments to the post still -->
             <div class="comments" style="vertical-align:middle;">
@@ -28,7 +28,7 @@
                     <div class="comment" id="post_border">
                         <br>
                         <div><h4>${comment.description}<h4></div>
-                        <div><span>Created: ${comment.date} by: Add User here eventually</span></div>
+                        <div style="color:black"><span>Created: ${comment.date} by: Add User here eventually</span></div>
                     </div>
                     <br>
                 % endfor

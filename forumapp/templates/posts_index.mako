@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="/style/mystyle.css"/>
         <title>Home</title>
     </head>
-    <body = id="body">
+    <body id="body">
         <div id="header">
             <a id="top"/><h1 id="title">clusterForum</h1></a>
         </div>
