@@ -5,7 +5,7 @@
     </head>
     <body>
         <hr>
-        <h1> clusterForum </h1>
+        <h1> clusterForum: Sign in </h1>
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>

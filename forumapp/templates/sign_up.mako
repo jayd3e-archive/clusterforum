@@ -5,8 +5,8 @@
             <title>New Users!</title>
     </head>
     <body>
-        <hr> 
-        <h1> Sign Up! </h1>
+        <hr>
+        <h1> clusterForum: Sign Up! </h1>
         <hr>
         <p> <b> clusterForum </b> is an online forum for general purposes. <br>
             Sign Up is free and your information is kept conifdential. <br>

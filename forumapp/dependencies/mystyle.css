@@ -1,14 +1,21 @@
 /* add style here if needed */
-body {
+#body{
     width:750px;
     margin:0 auto;
     margin-top:30px;
+    COLOR:#2D92C4;
+}
+body {
+    background:"background.gif";
 }
 /* ----- HEADER ----- */
 #header {
     width:750px;
     height:150px;
     background-color:#333333;
+    border-style:solid;
+    border-width:medium;
+    border-color:grey;
 }
 /* ----- NAVIGATION ----- */
 #navigation {
@@ -16,6 +23,9 @@ body {
     height:40px;
     background-color:#333333;
     margin-top:10px;
+    border-style:solid;
+    border-width:medium;
+    border-color:grey;
 }
 /* ----- MAIN CONTENT ----- */
 #content {
@@ -31,9 +41,11 @@ body {
     height:100px;
     background-color:#333333;
     margin-top:10px;
+    border-style:solid;
+    border-width:medium;
+    border-color:grey;
 }
 #title{
-    font-size:52;
     COLOR: #FF0000;
 }
 #ul_index{
@@ -49,6 +61,7 @@ body {
 #post_border{
     border-style:solid;
     border-width:medium;
+    border-color:grey;
 }
 a:link {
     COLOR: #FF0000;

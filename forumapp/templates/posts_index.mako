@@ -4,12 +4,12 @@
         <link rel="stylesheet" type="text/css" href="/style/mystyle.css"/>
         <title>Home</title>
     </head>
-    <body>
+    <body = id="body">
         <div id="header">
             <a id="top"/><h1 id="title">clusterForum</h1></a>
-            <ul id="ul_index">
         </div>
         <div id="navigation">
+            <ul id="ul_index">
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/signin"><INPUT TYPE="submit" VALUE="Sign In!"></FORM></li>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/signup"><INPUT TYPE="submit" VALUE="Sign Up!"></FORM></li>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/posts/create"><INPUT TYPE="submit" VALUE="Create a Post"></FORM></li>
