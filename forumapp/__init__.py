@@ -2,6 +2,7 @@ from pyramid.config import Configurator
 from sqlalchemy import engine_from_config
 from sqlalchemy.orm import sessionmaker
 from forumapp.models import initialize_base
+from pyramid.session import UnencryptedCookieSessionFactoryConfig
 
 
 def get_db(request):
@@ -17,7 +18,9 @@ def main(global_config, **settings):
     maker = sessionmaker(bind=engine)
     settings['db.sessionmaker'] = maker
 
-    config = Configurator(settings=settings)
+    my_session_factory = UnencryptedCookieSessionFactoryConfig('itsaseekreet')
+    config = Configurator(settings=settings,
+                          session_factory=my_session_factory)
     config.set_request_property(get_db, 'db', reify=True)
 
     #Static routes
