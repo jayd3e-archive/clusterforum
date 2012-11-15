@@ -107,6 +107,6 @@ def view(request):
     db.flush()
     return {
         'post': post,
-        'Commentnts': comments
+        'comments': comments
     }
 

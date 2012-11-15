@@ -10,6 +10,7 @@
             <ul id="ul_index">
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/signin"><INPUT TYPE="submit" VALUE="Sign In!"></FORM></li>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/signup"><INPUT TYPE="submit" VALUE="Sign Up!"></FORM></li>
+                <br>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/posts/create"><INPUT TYPE="submit" VALUE="Create a Post"></FORM></li>
             </ul>
         </div>

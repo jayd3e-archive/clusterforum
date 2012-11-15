@@ -19,7 +19,7 @@ body{
 
 }
 
-#center {
+#center{
     background-color:#00B64F;
     min-height:600px; /* for modern browsers */
     height:auto !important; /* for modern browsers */
