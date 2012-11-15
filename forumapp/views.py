@@ -13,12 +13,6 @@ from forumapp.models import (
     User,
     Comment
 )
-# TODO: Implement sesions for log in purposes.
-# from pyramid.session import UnencryptedCookieSessionFactoryConfig
-# my_session_factory = UnencryptedCookieSessionFactoryConfig('itsaseekreet')
-# from pyramid.config import Configurator
-# config = Configurator(session_factory = my_session_factory)
-# from pyramid.response import Response
 
 
 # make log in required for certain pages/features. If not logged push to login page!
@@ -34,8 +28,8 @@ def signin(request):
             # if user in session:
             #     return Response('Logged In')
             # return HTTPFound('/')
-        return HTTPFound('/') 
-    return{}  
+        return HTTPFound('/')
+    return{}
 
 
 # @view_config(context='velruse.AuthenticationDenied', permission=NO_PERMISSION_REQUIRED)
@@ -54,6 +48,8 @@ def index(request):
     return {
         'posts': posts
     }
+
+
 #Stores posts on create post page to POST database.
     # Still need to add the link between post->user
 @view_config(route_name='post_create', renderer='forumapp:templates/posts_create.mako')
@@ -68,6 +64,7 @@ def create(request):
         db.flush()
         return HTTPFound('/')
     return {}
+
 
     #Supposed to store users into user database from signup page- STILL BROKEN
 @view_config(route_name='sign_up', renderer='forumapp:templates/sign_up.mako', permission=NO_PERMISSION_REQUIRED)
@@ -84,6 +81,7 @@ def signup(request):
         return HTTPFound('/sucess')
     return {}
 
+
     #Transition Page from sign-in.
 @view_config(route_name='signup_sucess', renderer='forumapp:templates/signup_sucess.mako', permission=NO_PERMISSION_REQUIRED)
 def sucess(request):
@@ -91,7 +89,8 @@ def sucess(request):
     # Also set params, so the field can't be left blank/length restrictions.
     return{}
 
-#Displays a single post based on POST_ID            
+
+#Displays a single post based on POST_ID
 @view_config(route_name='view_post', renderer='forumapp:templates/post_display.mako', permission=NO_PERMISSION_REQUIRED)
 def view(request):
     db = request.db
@@ -108,11 +107,6 @@ def view(request):
     db.flush()
     return {
         'post': post,
-        'comments': comments
+        'Commentnts': comments
     }
-
-
-
-
-
 

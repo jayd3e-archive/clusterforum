@@ -1,29 +1,33 @@
 /* add style here if needed */
-body{ 
+body{
     background-color:#FFF;
     font-size:16px;
     margin:0;
 }
+
 #header{
     border-style:solid;
     border-width:5px;
     background-color:#007633;
     height:150px;
 }
-#top{ 
+
+#top{
     width:#A0D8F1;
-    background-color:#62DA97; 
+    background-color:#62DA97;
     height:50px;
 
 }
+
 #center {
-    background-color:#00B64F; 
+    background-color:#00B64F;
     min-height:600px; /* for modern browsers */
     height:auto !important; /* for modern browsers */
     height:600px; /* for IE5.x and IE6 */
     padding:10px;
 }
-#footer { 
+
+#footer {
     clear:both;
     background-color:#62DA97;
     height:100px;
@@ -33,4 +37,17 @@ body{
     border-style:solid;
     border-width:5px;
     border-color:black;
+}
+
+#ul_index
+{
+    display:inline-block;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+#li_index
+{
+    display:inline;
 }
