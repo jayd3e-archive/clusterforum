@@ -1,10 +1,11 @@
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/style/mystyle.css"/>
         <title>SIGN IN</title>
     </head>
-    <body style="margin-right:100px; margin-left:100px;">
+    <body>
         <hr>
-        <h1 style="color:red"> clusterForum </h1>
+        <h1> clusterForum </h1>
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>

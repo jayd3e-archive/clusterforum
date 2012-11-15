@@ -1,14 +1,14 @@
 <!-- Sign Up HTML: should take in user info and store to user table -->
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="/style/mystyle.css"/>
             <title>New Users!</title>
     </head>
-    <body style="margin-right:100px; margin-left:100px;">
+    <body>
         <hr> 
         <h1> Sign Up! </h1>
         <hr>
-        <p> <b style="color:red"> clusterForum </b> is an online forum for general purposes. <br>
+        <p> <b> clusterForum </b> is an online forum for general purposes. <br>
             Sign Up is free and your information is kept conifdential. <br>
             Remember to checkout the real deal @clusterflunk.com! </p>
         <!-- Sign up fields -->

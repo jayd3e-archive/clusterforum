@@ -1,12 +1,12 @@
 <!-- Create a post/thread -->
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style/mysytle.css">
+        <link rel="stylesheet" type="text/css" href="/style/mystyle.css"/>
         <title>Create a Post</title>
     </head>
-    <body style="margin-right:100px; margin-left:100px;">
+    <body>
         <hr>
-        <h1 style="color:red"> clustForum </h1>
+        <h1> clustForum </h1>
         <FORM METHOD="LINK" ACTION="/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>
