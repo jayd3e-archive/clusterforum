@@ -49,5 +49,6 @@ body{
 
 #li_index
 {
+    float:left;
     display:inline;
 }
