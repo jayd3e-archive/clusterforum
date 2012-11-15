@@ -1,54 +1,64 @@
 /* add style here if needed */
-body{
-    background-color:#FFF;
-    font-size:16px;
-    margin:0;
+body {
+    width:750px;
+    margin:0 auto;
+    margin-top:30px;
 }
-
-#header{
-    border-style:solid;
-    border-width:5px;
-    background-color:#007633;
+/* ----- HEADER ----- */
+#header {
+    width:750px;
     height:150px;
+    background-color:#333333;
 }
-
-#top{
-    width:#A0D8F1;
-    background-color:#62DA97;
-    height:50px;
-
+/* ----- NAVIGATION ----- */
+#navigation {
+    width:750px;
+    height:40px;
+    background-color:#333333;
+    margin-top:10px;
 }
-
-#center{
-    background-color:#00B64F;
-    min-height:600px; /* for modern browsers */
+/* ----- MAIN CONTENT ----- */
+#content {
+    width:750px;
+    min-height:450px; /* for modern browsers */
     height:auto !important; /* for modern browsers */
-    height:600px; /* for IE5.x and IE6 */
-    padding:10px;
+    height:450px; /* for IE5.x and IE6 */background-color:#333333;
+    margin-top:10px;
 }
-
+/* ----- FOOTER ----- */
 #footer {
-    clear:both;
-    background-color:#62DA97;
+    width:750px;
     height:100px;
-    padding:10px;
+    background-color:#333333;
+    margin-top:10px;
 }
-#post_border{
-    border-style:solid;
-    border-width:5px;
-    border-color:black;
+#title{
+    font-size:52;
+    COLOR: #FF0000;
 }
-
-#ul_index
-{
+#ul_index{
     display:inline-block;
     list-style-type:none;
     margin:0;
     padding:0;
 }
-
-#li_index
-{
+#li_index{
     float:left;
     display:inline;
+}
+#post_border{
+    border-style:solid;
+    border-width:medium;
+}
+a:link {
+    COLOR: #FF0000;
+}
+a:visited {
+    COLOR: #FF0000;
+}
+a:hover {
+    COLOR: #FF0000;
+}
+a:active {
+    COLOR: #FF0000;
 }
