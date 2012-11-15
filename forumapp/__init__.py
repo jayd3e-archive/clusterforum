@@ -33,7 +33,6 @@ def main(global_config, **settings):
     config.add_route('sign_up', '/signup')
     config.add_route('signup_sucess', '/sucess')
     config.add_route('sign_in', '/signin')
-    
 
     config.scan('forumapp')
     return config.make_wsgi_app()

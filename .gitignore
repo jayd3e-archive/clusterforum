@@ -36,7 +36,6 @@ Thumbs.db
 # Pyramid #
 ###########
 *.pyc
-*.db
 *.orig
 *.project
 *.hg
@@ -55,4 +54,3 @@ env/
 *egg/
 *-ck.js
 *.js.min
-*.css
