@@ -13,6 +13,9 @@
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/signin"><INPUT TYPE="submit" VALUE="Sign In!"></FORM></li>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/signup"><INPUT TYPE="submit" VALUE="Sign Up!"></FORM></li>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/posts/create"><INPUT TYPE="submit" VALUE="Create a Post"></FORM></li>
+                <li id="li_index"><FORM ACTION="/" METHOD="POST">
+                Search: <input type="text" name="search">
+                <input type="submit" value="Go"></form></li>
             </ul>
         </div>
         <div id="content">

@@ -12,6 +12,9 @@
                 <li id="li_index"><FORM METHOD="LINK" ACTION="/">
                 <INPUT TYPE="submit" VALUE="Home"></li>
                 <li id="li_index"><h4><a href="#comment">Comment On A Thread</a></h4></li>
+                <li id="li_index"><FORM ACTION="/" METHOD="POST">
+                Search: <input type="text" name="search">
+                <input type="submit" value="Go"></form></li>
                 </FORM>
             </ul>
         </div>
@@ -28,13 +31,13 @@
                     <div class="comment" id="post_border">
                         <br>
                         <div><h4>${comment.description}<h4></div>
-                        <div style="color:black"><span>Created: ${comment.date} by: Add User here eventually</span></div>
+                        <div style="color:black">
+                            <span>Created: ${comment.date} by: Add User here eventually</span>
+                        </div>
                     </div>
                     <br>
                 % endfor
             </div>
-        </div>
-        <div id="footer">
             <!-- Option to post a comment -->
                 <!-- still in work -->
             <form method="POST" style = "text-align:center;">
@@ -43,6 +46,8 @@
                 </label>
                 <input name="submit" type="submit"/>
             </form>
+        </div>
+        <div id="footer">
             <h4 style="text-align:right"><a href="#top">Return To Top</a></h4>
         </div>
     </body>

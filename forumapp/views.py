@@ -13,6 +13,7 @@ from forumapp.models import (
     User,
     Comment
 )
+from sqlalchemy.sql.expression import desc
 
 
 # make log in required for certain pages/features. If not logged push to login page!
@@ -43,7 +44,7 @@ def signin(request):
 @view_config(route_name='index', renderer='forumapp:templates/posts_index.mako', permission=NO_PERMISSION_REQUIRED)
 def index(request):
     db = request.db
-    posts = db.query(Post).all()
+    posts = db.query(Post).order_by(desc('posts.date')).all()
     db.flush()
     return {
         'posts': posts
@@ -109,3 +110,11 @@ def view(request):
         'post': post,
         'comments': comments
     }
+
+#To do
+@view_config(route_name='search', renderer='forumapp:templates/posts_index.mako')
+def search(request):
+    db = request.db
+    if request.POST.get('go', False):
+        return HTTPFound('/signin')
+    return{}
