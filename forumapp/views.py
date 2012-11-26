@@ -64,7 +64,6 @@ def create(request):
 @view_config(route_name='sign_up', renderer='forumapp:templates/sign_up.mako', permission=NO_PERMISSION_REQUIRED)
 def signup(request):
     db = request.db
-    import pdb; pdb.set_trace()
     if request.POST.get("submit", False):
         user = User(username=request.POST['username'],
                     password=request.POST['password'],
@@ -73,7 +72,6 @@ def signup(request):
         db.add(user)
         db.commit()
         return HTTPFound('/sucess')
-
     return{}
 
 
