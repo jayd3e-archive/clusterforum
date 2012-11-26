@@ -17,7 +17,7 @@ from sqlalchemy.sql.expression import desc
 
 
 # make log in required for certain pages/features. If not logged push to login page!
-# may need soap, or some other functionality.
+
 @view_config(route_name='sign_in', renderer='forumapp:templates/sign_in.mako', permission=NO_PERMISSION_REQUIRED)
 @forbidden_view_config(renderer='forumapp:templates/sign_in.mako')
 def signin(request):
@@ -33,14 +33,7 @@ def signin(request):
     return{}
 
 
-# @view_config(context='velruse.AuthenticationDenied', permission=NO_PERMISSION_REQUIRED)
-# def login_denied(request):
-#     return HTTPForbidden()
-# Need velruse
-
-
-
-#Displays posts on home page
+    #Displays posts on home page
 @view_config(route_name='index', renderer='forumapp:templates/posts_index.mako', permission=NO_PERMISSION_REQUIRED)
 def index(request):
     db = request.db
@@ -71,16 +64,17 @@ def create(request):
 @view_config(route_name='sign_up', renderer='forumapp:templates/sign_up.mako', permission=NO_PERMISSION_REQUIRED)
 def signup(request):
     db = request.db
-    if request.POST.get('submit', False):
+    import pdb; pdb.set_trace()
+    if request.POST.get("submit", False):
         user = User(username=request.POST['username'],
-            password=request.POST['password'],
-            email=request.POST['email'],
-            age=request.POST['age'])
+                    password=request.POST['password'],
+                    email=request.POST['email'],
+                    age=request.POST['age'])
         db.add(user)
         db.commit()
-        db.flush()
         return HTTPFound('/sucess')
-    return {}
+
+    return{}
 
 
     #Transition Page from sign-in.

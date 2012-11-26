@@ -31,8 +31,19 @@
             </div>
         </div>
         <div id="footer">
+            <ul id="pagination-flickr">
+                <li class="previous-off">«Previous</li>
+                <li class="active">1</li>
+                <li><a href="?page=2">2</a></li>
+                <li><a href="?page=3">3</a></li>
+                <li><a href="?page=4">4</a></li>
+                <li><a href="?page=5">5</a></li>
+                <li><a href="?page=6">6</a></li>
+                <li><a href="?page=7">7</a></li>
+                <li class="next"><a href="?page=2">Next »</a></li>
+            </ul>
+            <br>
             <h5><a href="#top">Return To Top</a></h5>
-            <p> This is a forum created for practice purposes. Credit: ClusterFlunk development team. Nov.1 -Nov.28 2012 </p>
         <div>
     </body>
 </html>
