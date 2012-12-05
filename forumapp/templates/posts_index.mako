@@ -15,7 +15,7 @@
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/posts/create"><INPUT TYPE="submit" VALUE="Create a Post"></FORM></li>
                 <li id="li_index"><FORM ACTION="/" METHOD="POST">
                 Search: <input type="text" name="search">
-                <input type="submit" value="Go"></form></li>
+                <input type="submit" value="Go"></FORM></li>
             </ul>
         </div>
         <div id="content">
@@ -32,7 +32,7 @@
         </div>
         <div id="footer">
             <ul id="pagination-flickr">
-                <li class="previous-off">«Previous</li>
+                <li class="previous-off">« Previous</li>
                 <li class="active">1</li>
                 <li><a href="?page=2">2</a></li>
                 <li><a href="?page=3">3</a></li>

@@ -4,8 +4,7 @@ from pyramid.view import (
     forbidden_view_config
     )
 from pyramid.httpexceptions import (
-    HTTPFound,
-    HTTPForbidden
+    HTTPFound
 )
 from pyramid.security import NO_PERMISSION_REQUIRED
 from forumapp.models import (
@@ -21,15 +20,15 @@ from sqlalchemy.sql.expression import desc
 @view_config(route_name='sign_in', renderer='forumapp:templates/sign_in.mako', permission=NO_PERMISSION_REQUIRED)
 @forbidden_view_config(renderer='forumapp:templates/sign_in.mako')
 def signin(request):
-    #session = request.session
     db = request.db
     if request.POST.get('submit', False):
-            # session['user'] = db.query(Users).filter_by(username=request.POST.username).first()
-            # session['password'] = db.query(Users).filter_by(password=request.POST.password).first()
-            # if user in session:
-            #     return Response('Logged In')
-            # return HTTPFound('/')
-        return HTTPFound('/')
+        #import pdb; pdb.set_trace()
+        user_name = request.POST['username']
+        if db.query(User).filter_by(username=request.POST['username'], password=request.POST['password']).first():
+            session = request.session
+            session[user_name] = 'logged-in'
+            if user_name in session:
+                return HTTPFound('/')
     return{}
 
 

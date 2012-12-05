@@ -9,7 +9,7 @@
         </div>
         <div id="navigation">
              <FORM METHOD="LINK" ACTION="/">
-            <INPUT TYPE="submit" VALUE="Home">
+                <INPUT TYPE="submit" VALUE="Home">
             </FORM>
         </div>
         <div id="content">
@@ -17,8 +17,10 @@
                 <table border="1;" id="signin_form">
                     <tr>
                     <td><label for="username">*Username: <input name="username" type="text"/></label></td>
+                    </tr>
                     <tr>
                     <td><label for="password">*Password: <input name="password" type="password"/></label></td>
+                    </tr>
                     <tr>
                     <td><input name="submit" type="submit"/></td>
                     </tr>
