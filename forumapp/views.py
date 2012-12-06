@@ -13,9 +13,10 @@ from forumapp.models import (
     Comment
 )
 from sqlalchemy.sql.expression import desc
-
+#from pyramid.security import Authenticated
 
 # make log in required for certain pages/features. If not logged push to login page!
+
 
 @view_config(route_name='sign_in', renderer='forumapp:templates/sign_in.mako', permission=NO_PERMISSION_REQUIRED)
 @forbidden_view_config(renderer='forumapp:templates/sign_in.mako')
@@ -29,7 +30,9 @@ def signin(request):
             session[user_name] = 'logged-in'
             if user_name in session:
                 return HTTPFound('/')
-    return{}
+        else:
+            return HTTPFound('/signin')
+    return {}
 
 
     #Displays posts on home page
@@ -101,8 +104,9 @@ def view(request):
         'post': post,
         'comments': comments
     }
-
 #To do
+
+
 @view_config(route_name='search', renderer='forumapp:templates/posts_index.mako')
 def search(request):
     db = request.db

@@ -3,6 +3,13 @@
     <head>
         <link rel="stylesheet" type="text/css" href="/style/mystyle.css"/>
             <title>New Users!</title>
+        <script type ="text/javascript">
+            function validateUserName(value){
+                if(len(value) <= 6){
+                    alert("Username must be greater than 6 chars")
+                }
+            }
+        </script>
     </head>
     <body id="body">
         <div id="header">
@@ -22,7 +29,7 @@
                 <table border=1px id="signup_form">
                     <tr>
                     <td><label for="username">username
-                        <input name="username" type="text"/></label></td>
+                        <input name="username" type="text" onblur="validateUserName(this.value)"/></label></td>
                     </tr>
                     <tr>
                     <td><label for="password">password
