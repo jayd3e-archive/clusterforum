@@ -44,8 +44,6 @@ def main(global_config, **settings):
     config.add_route('sign_up', '/signup')
     config.add_route('signup_sucess', '/sucess')
     config.add_route('sign_in', '/signin')
-    # Search
-    config.add_route('search', '/')
 
     config.scan('forumapp')
     return config.make_wsgi_app()

@@ -23,7 +23,6 @@ from sqlalchemy.sql.expression import desc
 def signin(request):
     db = request.db
     if request.POST.get('submit', False):
-        #import pdb; pdb.set_trace()
         user_name = request.POST['username']
         if db.query(User).filter_by(username=request.POST['username'], password=request.POST['password']).first():
             session = request.session
@@ -31,7 +30,8 @@ def signin(request):
             if user_name in session:
                 return HTTPFound('/')
         else:
-            return HTTPFound('/signin')
+            fail_message = 'Log-in failed'
+            return dict(message=fail_message)
     return {}
 
 
@@ -41,6 +41,17 @@ def index(request):
     db = request.db
     posts = db.query(Post).order_by(desc('posts.date')).all()
     db.flush()
+    # if request.POST.get('search', False):
+    #     search_item = request.POST['search']
+    #     if db.query(Post).filter_by(name=search_item).first():
+    #         post = db.query(Post).filter_by(name=search_item).first()
+    #         db.commit()
+    #         return {
+    #             'post': post
+    #         }
+    #     else:
+    #         message = "No search result!"
+    #         return dict(message=message, posts=posts)
     return {
         'posts': posts
     }
@@ -104,12 +115,3 @@ def view(request):
         'post': post,
         'comments': comments
     }
-#To do
-
-
-@view_config(route_name='search', renderer='forumapp:templates/posts_index.mako')
-def search(request):
-    db = request.db
-    if request.POST.get('go', False):
-        return HTTPFound('/signin')
-    return{}
