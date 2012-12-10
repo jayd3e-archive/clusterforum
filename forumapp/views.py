@@ -80,7 +80,7 @@ def create(request):
 @view_config(route_name='sign_up', renderer='forumapp:templates/sign_up.mako', permission=NO_PERMISSION_REQUIRED)
 def signup(request):
     db = request.db
-    if request.POST.get("submit", False):
+    if request.POST.get('submit', False):
         user = User(username=request.POST['username'],
                     password=request.POST['password'],
                     email=request.POST['email'],
@@ -108,10 +108,10 @@ def view(request):
                 date=datetime.now(),
                 post_id=id)
             db.add(comment)
+            db.commit()
         comments = db.query(Comment).filter_by(post_id=id).all()
         post = db.query(Post).filter_by(id=id).first()
-    db.commit()
-    db.flush()
+        db.commit()
     return {
         'post': post,
         'comments': comments
