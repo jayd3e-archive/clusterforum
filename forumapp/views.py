@@ -44,8 +44,8 @@ def index(request):
     db.flush()
     if request.POST.get('search', False):
         search_item = request.POST['search']
-        if db.query(Post).filter_by(name=search_item).first():
-            result = db.query(Post).filter_by(name=search_item).first()
+        if db.query(Post).filter(Post.name.ilike(search_item)).first():
+            result = db.query(Post).filter(Post.name.ilike(search_item)).first()
             return {
                 'result': result,
                 'posts': posts,
