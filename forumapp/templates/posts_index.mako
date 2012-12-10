@@ -10,23 +10,34 @@
         </div>
         <div id="navigation">
             <ul id="ul_index">
-                <li id="li_index">Welcome, ${user}</li>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/posts/create"><INPUT TYPE="submit" VALUE="Create a Post"></FORM></li>
-                <li id ="li_index"><FORM METHOD="POST" ACTION="/"> Search: <INPUT TYPE="text" NAME="search"><input type="submit"</FORM></li>
+                <li id ="li_index"><FORM METHOD="POST" ACTION="/"> Search: <INPUT TYPE="text" NAME="search"><input type="submit"></FORM></li>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/signin"><INPUT TYPE="submit" VALUE="Sign In!"></FORM></li>
                 <li id ="li_index"><FORM METHOD="LINK" ACTION="/signup"><INPUT TYPE="submit" VALUE="Sign Up!"></FORM></li>
-              </ul>
+            </ul>
         </div>
         <div id="content">
             <!-- loop through dict and display posts from db -->
             <div class="posts" style="vertical-align:middle;">
-                % for post in posts:
-                    <div class="post" id="post_border">
-                        <h3><a href="post/${post.id}">${ post.name }</a></h3>
-                        <div><span>Created: ${ post.date } ID: ${ post.id }</span></div>
+                % if result:
+                    <div>
+                        <h3><a href="post/${result.id}"> ${result.name}</a> </h3>
+                        <span> Created: ${result.date} ID: ${result.id} </span>
+                        <FORM METHOD="LINK" ACTION="/"><INPUT TYPE="submit" VALUE="Back">
+                        </FORM>
                     </div>
-                    <br>
-                % endfor
+                % else:
+                    % if message:
+                        <span> ${message} (Search is case sensitive!) </span>
+                    % endif
+                    % for post in posts:
+                        <div class="post" id="post_border">
+                            <h3><a href="post/${post.id}">${ post.name }</a></h3>
+                            <div><span>Created: ${ post.date } ID: ${ post.id }</span></div>
+                        </div>
+                        <br>
+                    % endfor
+                % endif
             </div>
         </div>
         <div id="footer">

@@ -41,17 +41,17 @@ def index(request):
     db = request.db
     posts = db.query(Post).order_by(desc('posts.date')).all()
     db.flush()
-    # if request.POST.get('search', False):
-    #     search_item = request.POST['search']
-    #     if db.query(Post).filter_by(name=search_item).first():
-    #         post = db.query(Post).filter_by(name=search_item).first()
-    #         db.commit()
-    #         return {
-    #             'post': post
-    #         }
-    #     else:
-    #         message = "No search result!"
-    #         return dict(message=message, posts=posts)
+    if request.POST.get('search', False):
+        search_item = request.POST['search']
+        if db.query(Post).filter_by(name=search_item).first():
+            result = db.query(Post).filter_by(name=search_item).first()
+            return {
+                'result': result,
+                'posts': posts
+            }
+        else:
+            message = "No search result!"
+            return dict(message=message, posts=posts)
     return {
         'posts': posts
     }
@@ -91,8 +91,6 @@ def signup(request):
     #Transition Page from sign-in.
 @view_config(route_name='signup_sucess', renderer='forumapp:templates/signup_sucess.mako', permission=NO_PERMISSION_REQUIRED)
 def sucess(request):
-    #Eventually return some sort of global logged-in variable
-    # Also set params, so the field can't be left blank/length restrictions.
     return{}
 
 

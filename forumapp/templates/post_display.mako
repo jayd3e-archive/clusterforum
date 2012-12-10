@@ -12,10 +12,6 @@
                 <li id="li_index"><FORM METHOD="LINK" ACTION="/">
                 <INPUT TYPE="submit" VALUE="Home"></li>
                 <li id="li_index"><h4><a href="#comment">Comment On A Thread</a></h4></li>
-                <li id="li_index"><FORM ACTION="/" METHOD="POST">
-                Search: <input type="text" name="search">
-                <input type="submit" value="Go"></form></li>
-                </FORM>
             </ul>
         </div>
         <div id="content">
