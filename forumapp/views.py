@@ -31,7 +31,7 @@ def signin(request):
                 return HTTPFound('/')
         else:
             fail_message = 'Log-in failed'
-            return dict(message=fail_message)
+            return dict(message=fail_message, name=user_name)
     return {}
 
 
@@ -81,13 +81,18 @@ def create(request):
 def signup(request):
     db = request.db
     if request.POST.get('submit', False):
-        user = User(username=request.POST['username'],
-                    password=request.POST['password'],
-                    email=request.POST['email'],
-                    age=request.POST['age'])
-        db.add(user)
-        db.commit()
-        return HTTPFound('/sucess')
+        pre_existing_user = db.query(User).filter_by(username=request.POST['username']).first()
+        if pre_existing_user:
+            message = "An account with that username already exists! Sorry!"
+            return dict(message=message)
+        else:
+            user = User(username=request.POST['username'],
+                        password=request.POST['password'],
+                        email=request.POST['email'],
+                        age=request.POST['age'])
+            db.add(user)
+            db.commit()
+            return HTTPFound('/sucess')
     return{}
 
 
