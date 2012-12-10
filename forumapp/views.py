@@ -40,6 +40,7 @@ def signin(request):
 def index(request):
     db = request.db
     posts = db.query(Post).order_by(desc('posts.date')).all()
+    count = db.query(Post).count()
     db.flush()
     if request.POST.get('search', False):
         search_item = request.POST['search']
@@ -47,13 +48,15 @@ def index(request):
             result = db.query(Post).filter_by(name=search_item).first()
             return {
                 'result': result,
-                'posts': posts
+                'posts': posts,
+                'count': count
             }
         else:
             message = "No search result!"
             return dict(message=message, posts=posts)
     return {
-        'posts': posts
+        'posts': posts,
+        'count': count
     }
 
 
