@@ -28,10 +28,11 @@ def signin(request):
             session = request.session
             session[user_name] = 'logged-in'
             if user_name in session:
+                pass_message = 'logg in sucessful %s' % user_name
                 return HTTPFound('/')
         else:
             fail_message = 'Log-in failed'
-            return dict(message=fail_message, name=user_name)
+            return dict(message=fail_message, name=user_name, pass_mess=pass_message)
     return {}
 
 

@@ -1,27 +1,26 @@
 <!-- Sign Up HTML: should take in user info and store to user table -->
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/style/mystyle.css"/>
             <title>New Users!</title>
     </head>
-    <!-- Script Section -->
     <script language="javascript" type="text/javascript">
-        function validateForm()
+    function validateForm(username)
+    {
+        var x=document.forms["myForm"]["username"].value;
+        if (x==null || x=="")
         {
-            var x=document.forms["myForm"]["username"].value;
-            if (x==null || x=="")
-            {
-                alert("Username must be filled out");
-                return false;
-            }
-            if (x<=6)
-            {
-                alert("Username must be greater than 6 charectors!")
-                return false;
-            }
+            alert("Username must be filled out");
+            return false;
         }
+        if (x<=6)
+        {
+            alert("Username must be greater than 6 charectors!")
+            return false;
+        }
+    }
     </script>
-    <!-- script end -->
     <body id="body">
 
         <div id="header">
@@ -39,7 +38,7 @@
                 Sign Up is free and your information is kept conifdential. <br>
                 Remember to checkout the real deal @clusterflunk.com!
             </p>
-            <form name="myForm" onsubmit="return validateForm()" method="POST" action="/signup" style="text-align:center">
+            <form name="myForm" onsubmit="validateForm(form.username.value)" method="POST" action="/signup" style="text-align:center">
                 <table border=1px id="signup_form">
                     <tr>
                     <td><label for="username">username

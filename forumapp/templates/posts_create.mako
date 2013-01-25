@@ -19,7 +19,8 @@
                 <h1 id="title"> Create Post </h1>
                 <label for="name">Title
                     <input name="name" type="text"/>
-                </label><br>
+                </label>
+                <br>
                 <textarea name="description" cols="100" rows="10">Enter your details here...</textarea><br>
                 </label>
                 <input name="submit" type="submit"/>

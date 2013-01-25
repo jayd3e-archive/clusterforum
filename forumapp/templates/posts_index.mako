@@ -30,6 +30,10 @@
                     % if message:
                         <span> ${message} (Search is case sensitive!) </span>
                     % endif
+                    <!-- does not work -->
+                    % if  pass_mess:
+                        <span> ${pass_mess} </span>
+                    % endif
                     % for post in posts:
                         <div class="post" id="post_border">
                             <h3><a href="post/${post.id}">${ post.name }</a></h3>
