@@ -29,6 +29,7 @@
             % if message:
                 <p>${message}</p>
             % endif
+            <p> Change </p>
         </div>
         <div id="footer">
             <p> This is a forum created for practice purposes. Credit: ClusterFlunk development team. Nov.1 -Nov.28 2012 </p>
